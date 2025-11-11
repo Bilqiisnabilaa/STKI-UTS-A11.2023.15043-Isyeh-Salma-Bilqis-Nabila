@@ -1,16 +1,30 @@
-Mini Search Engine – UTS Sistem Temu Kembali Informasi (STKI)
+#  Mini Search Engine – UTS Sistem Temu Kembali Informasi (STKI)
 
-Proyek ini merupakan implementasi Mini Search Engine untuk memenuhi tugas UTS Mata Kuliah Sistem Temu Kembali Informasi (STKI).
-Aplikasi ini dirancang untuk meniru cara kerja sistem pencarian informasi sederhana, menggunakan Boolean Retrieval dan Vector Space Model (VSM) dengan pendekatan TF-IDF dan Cosine Similarity.
+Proyek ini merupakan implementasi **Mini Search Engine** untuk memenuhi tugas **UTS Mata Kuliah Sistem Temu Kembali Informasi (STKI)**.  
+Aplikasi ini dirancang untuk meniru cara kerja sistem pencarian informasi sederhana menggunakan **Boolean Retrieval** dan **Vector Space Model (VSM)** dengan pendekatan **TF-IDF** dan **Cosine Similarity**.
 
-1. Deskripsi Proyek
-Tujuan utama proyek ini adalah:
-Mengolah sekumpulan dokumen teks dan menyiapkannya untuk pencarian (preprocessing).
-Mengimplementasikan dua model pencarian: Boolean dan VSM (TF-IDF).
-Mengukur kualitas hasil pencarian menggunakan Precision@K, MAP@K, dan nDCG@K.
-Menyediakan sistem pencarian berbasis terminal (CLI) yang interaktif dan mudah digunakan.
-Proyek ini merupakan hasil implementasi Sub-CPMK 10.1.1–10.1.4, yang mencakup konsep dasar STKI, preprocessing, pembentukan model, serta evaluasi performa.
+---
 
+##  Deskripsi Proyek
+
+### Tujuan Utama
+1. Mengolah sekumpulan dokumen teks dan menyiapkannya untuk pencarian (*preprocessing*).  
+2. Mengimplementasikan dua model pencarian: **Boolean** dan **VSM (TF-IDF)**.  
+3. Mengukur kualitas hasil pencarian menggunakan metrik:
+   - **Precision@K**
+   - **MAP@K**
+   - **nDCG@K**
+4. Menyediakan sistem pencarian berbasis **Command Line Interface (CLI)** yang interaktif dan mudah digunakan.  
+
+Proyek ini merupakan hasil implementasi **Sub-CPMK 10.1.1–10.1.4**, yang mencakup:
+- Konsep dasar STKI  
+- Preprocessing teks  
+- Pembentukan model pencarian  
+- Evaluasi performa sistem  
+
+---
+
+##  Struktur Folder
 2. Struktur Folder
 STKI-UTS-A11.2023.15043-ISYEH-SALMA-BILQIS-NABILA/
 │
