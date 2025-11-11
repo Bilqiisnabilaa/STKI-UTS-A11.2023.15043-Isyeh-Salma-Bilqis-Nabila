@@ -50,6 +50,7 @@ STKI-UTS-A11.2023.15043-ISYEH-SALMA-BILQIS-NABILA/
 │
 ├── reports/                         
 │   ├── LAPORAN UTS-STKI-A11.2023.15043-Isyeh Salma Bilqis Nabila.pdf
+│   ├── SOAL 01-UTS-STKI-A11.2023.15043-Isyeh Salma Bilqis Nabila.pdf
 │   ├── readme.md                # Dokumentasi proyek
 |
 ├── src/                         # Source code utama
