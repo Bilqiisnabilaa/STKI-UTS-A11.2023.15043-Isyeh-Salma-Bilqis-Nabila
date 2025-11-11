@@ -1,0 +1,53 @@
+SistemTemuKembaliInformasi“Pengenalan SistemTemuKembali Informasi(STKI)”Tim DosenSTKI
+ProfilDosenPengampuAbu Salam, M.KomResearch Interest§Software Engineering, Data Mining, Information Retrieval, AI dan BIG DATA.Activity§DosenTI FasilkomUDINUS§Manager DepartementSoftware PT DINUSTEK
+
+KontakDosen PengampuEmail : abu.salam@dsn.dinus.ac.idTelegram/WA: 0817244958
+
+KontrakPerkuliahan◉Wajib gabung pada Grup Telegram (Cek SIADIN / KULINO)◉STKI dilaksanakan 14 Kali Pertemuan◉Materi Perkuliahan disediakan tiap pertemuan melalui media kulino.dinus.ac.id◉Kehadiran minimal75% (Tidak ada Dispensasi) ◉ProsentaseNilai : Tugas : 40, UTS: 30, UAS: 30◉Nilai Tugas adalah akumulasi nilai (Kehadiran, Sikap, Keaktifan, Kuis, Tugas dan lain-lain)
+
+PerkenalanMakul◉Nama Mata Kuliah : InformationRetrieval(STKI)◉Jumlah SKS: 3 SKS Teori◉Tim Dosen : -Dr. Catur Supriyanto, M.Cs-Abu Salam M.Kom-Junta ZeniarjaM.Kom-ArdythaLuthfiartaM.Kom
+
+OutlineoPengenalan sistem temu-kembali informasioDokumenPreprocessingoModel sistemtemukembaliinformasi; Booleanmodel oModel sistemtemukembaliinformasi; vectorspacemodeloSkema pembobotan; tf, log tf, idf, tf.idfoSearchEngineConceptoEvaluasi dalam STKI
+oKlasifikasi Dokumen; naivebayesoKlasifikasi Dokumen; KNNoKusterDokumen; K-MeansoPeringkasan Dokumen TeksoFeatureSelectionoOpinionMining (SentimentAnalysis)oWeb Mining
+BukuPenunjang& Literatur
+
+Dokumen
+
+PenyimpananYang Terorganisasi
+
+Database◉Database Buku
+
+Siapapemaindalamnovel tersebut?
+
+PerpustakaanUdinus( E-Library )
+
+Database Retrieval vs SistemTemuKembaliInformasi•Database Retrieval•Dokumenmanayang mengandunghimpunankeyword?•Semantikdidefinisikandenganbaik•Error darisuatuobyekmengakibatkankegagalan!•SistemTemuKembaliInformasi•Informasimengenaisuatusubyekatautopik•Semantikdapatbersifatlepas(longgar)•Error kecilditoleransi
+
+Pengertian•Pencarianmateri(biasanyadokumen)darisesuatuyangsifatnyatak-terstruktur(unstructured,biasanyateks)untukmemenuhikebutuhaninformasidaridalamkoleksibesar(biasanyadisimpandalamkomputer).•Representasi,penyimpanan,organisasi,pencariandanakseskeiteminformasiuntukmemenuhikebutuhaninformasipengguna.•Penekananpadaprosesretrievalinformasi(bukandata).•Karakterisasikebutuhaninformasitidaklahmudah.Harusditranslasikedalamsuatuqueryterlebihdahulu.
+
+SistemTemuKembaliInformasi•Secarateknis:indexing(pembuatanindex)danretrieval(pencarianketerangan)dokumentextual.•PencarianhalamanpadaWWWadalahaplikasipaling“ngetop”saatini.•Fokuspertama:me-retrievedokumen-dokumenyangrelevandenganquery.•Fokuskedua:me-retrievehimpunanbesardokumensecaraefisien.•Tujuan:Me-retrievesemuadokumenyangrelevansekaligusme-retrievesesedikitmungkindokumenyangtidakrelevan.
+
+Relevan•Relevansimerupakansuatujudgment(keputusan)subyektifdandapatdidasarkanpada:•Topikyangtepat.•Waktu(informasiterbaru).•Otoritatif(darisuatusumberterpecaya).•Kebutuhaninformasidaripengguna.•Kriteriarelevansiutama:suatusystemIRsebaiknya(harus)memenuhikebutuhaninformasipengguna.
+
+SistemSistemTemuKembali Informasi(IR System)
+
+SistemTemuKembaliInformasi
+
+PencarianKeyword•Idepalingsederhanadarirelevansi:apakahstringqueryadadidalamdokumen(katademikata,verbatim)?•Ideyanglebihfleksibel:Berapaseringkata-katadidalamquerymunculdidalamdokumen,tanpamelihaturutannya(bagofwords)?
+
+MasalahdenganKeyword•Mungkintidakme-retrievedokumenrelevanyangmenyertakansynonymousterms.•“restaurant”vs.“café”•“NDHU”vs.“NationalDongHwaUniversity”•Mungkinme-retrievedokumentak-relevanyangmenyertakanambiguousterms.•“bat” (baseball vs. mamalia)•“Apple” (perusahaanvs. buah-buahan)•“bit” (unit data vs. perilaku menggigit) 
+
+•Kitaakanmendiskusikandasar-dasarIRberbasiskeyword,tetapi…•Fokuspadaperluasandanpengembanganterakhiruntukmendapatkanhasilterbaik.•Kitaakanmembahasdasar-dasarpembangunansystemIRyangefisien,tetapi…•Fokuspadaalgoritmadankemampuandasar,bukanmasalahsistemyangmemungkinkanpengembangankedatabaseukuranindustri.BukanSekedarKeyword
+
+STKI Cerdas•Memanfaatkanpengertianataumaknadarikatayangdigunakan.•Melibatkanurutankatadidalamquery.•Beradaptasidenganpenggunaberdasarkanpadafeedback,langsungatautidaklangsung.•Memperluaspencariandengantermterkait.•Mengerjakanpemeriksaanejaaan/perbaikantandapengenalotomatis.•MemanfaatkanOtoritasdarisumber
+
+PerkembanganSistemTemuKembaliInformasi1.KlasifikasiDokumen2.Clustering Dokumen3.PeringkasanTeks4.Question Answering System
+
+Portal Jurnal(http://scholar.google.com/)
+
+Portal Jurnal(http://ieeexplore.ieee.org/Xplore/home.jsp)
+
+Portal Jurnal(http://www.sciencedirect.com)
+
+Any questions?Thanks!
+

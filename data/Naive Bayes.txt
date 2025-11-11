@@ -1,0 +1,38 @@
+SistemTemuKembaliInformasi“KlasifikasiDokumendenganNaïve Bayes”Tim DosenSTKI
+BukuPenunjang& Literatur
+
+Course Outline
+Klasifikasi Text
+Naive Bayes Classifier (NBC)
+Contoh Penyelesaian Kasus
+
+Klasifikasi Teks◉Masalah klasifikasi adalah bagaimana menentukan suatu objek masuk ke suatu class yang sebenarnya.–Dalam pemrosesan text, suatu class lebih bersifat area subjek umum (disebut juga topik)–Contoh Implementasi•Sentiment detection•Mendeteksi encoding dokumen•Topic-specific (vertical-search)•Mendeteksiotomatishalaman/ email spam•…….
+
+Proses klasifikasi
+
+Naive Bayes Classifier§BayesianClassificationadalahpengklasifikasianstatistikyangdapatdigunakanuntukmemprediksiprobabilitaskeanggotaansuatuclass.§BayesianClassificationdidasarkanpadateoremaBayesyangmemilikikemampuanklasifikasiserupadecisiontreedanneuralnetwork.§BayesianClassificationterbuktimemilikiakurasidankecepatanyangtinggisaatdiaplikasikanpadadatayangbesar.
+
+Naive Bayes Classifier◉Metode NBC menempuh dua tahap dalam proses klasifikasi teks, yaitu tahap pelatihandan tahap klasifikasi. Tahap pelatihan:•Proses analisis terhadap sampel dokumen berupa pemilihan vocabulary.(kata yang  mungkin muncul dalam koleksi dokumen sampel yang sedapat mungkin dapat menjadi representasi dokumen). •Penentuan probabilitas prior bagi tiap kategori berdasarkan sampel dokumen. Tahap klasifikasi:•Ditentukan nilai kategori dari suatu dokumen berdasarkan term yang muncul dalam dokumen yang diklasifikasi
+
+RumusTeoremaBayesTeoremaBayesmemilikibentukumumsbb:𝑃(𝐻|𝑋)=𝑃𝑋𝐻𝑃(𝐻)𝑃(𝑋)Keterangan:X:datadenganclassyangbelumdiketahuiH:hipotesisdataXmerupakansuatuclassspesifikP(H|X):probabilitashipotesisHberdasarkondisiX(posterioriprobability)P(H):probabilitashipotesisH(priorprobability)P(X|H):probabilitasXberdasarkondisihipotesisHP(X):probabilitasdariX
+
+Naive Bayes Classifier◉Diasumsikan suatu koleksi dokumen D={di | i=1,2,…|D|}={d1,d2,…,d|D|}dan koleksi kategori / kelas C={cj|j=1,2,…|C|}={c1,c2,…,c|c|}. ◉Klasifikasi NBC dilakukan dengan cara mencari probabilitas P(C=cj | D=di), yaitu probabilitas category cjjika diketahui dokumen didipandang sebagai tuple dari kata-kata dalam dokumen, yaitu <w1, w2,…,wn>, yang frekuensi kemunculannya diasumsikan sebagai variable random.◉𝑃𝐶𝑑=𝑃(𝐶)∏!"#$𝑃(𝑤!|𝐶)(1)◉𝑃(𝑤!|𝐶)=%&'$()!,+,#%&'$(+,-(2)◉Dimana𝐶adalahClass, 𝐷adalahdokumen, 𝑤!adalahkata 𝑤ke𝑖, 𝑐𝑜𝑢𝑛𝑡(𝑤!,𝐶)adalahjumlahkata 𝑤!dalam𝐶, 𝑐𝑜𝑢𝑛𝑡(𝐶)adalahjumlahkata di class 𝐶, 𝑉adalahjumlahvocabulary.
+
+Contoh kasus◉Denganmenggunakanalgoritmanaïve bayes, tentukanclass dariD6 berikut: TeksClassTrainingD1SepakbolaindahmenyerangOlahragaD2PresidenmenaikanhargaBBMPolitikD3PartaipolitikIndonesiaberburusuaraPoitikD4ManchesterUnitedJuaraLigaInggrisOlahragaD5TimnasIndonesiagagaljuaraAFCOlahragaTestingD6PSISberburujuaraLigaIndonesia?
+
+Pembahasan◉Mengacu pada persamaan :◉𝑃𝐶𝑑=𝑃(𝐶)∏!"#$𝑃(𝑤!|𝐶)◉𝑃(𝑤!|𝐶)=%&'$()!,+,#%&'$(+,-◉Dimana𝐶adalahClass, 𝐷adalahdokumen, 𝑤!adalahkata 𝑤ke𝑖, 𝑐𝑜𝑢𝑛𝑡(𝑤!,𝐶)adalahjumlahkata 𝑤!dalam𝐶, 𝑐𝑜𝑢𝑛𝑡(𝐶)adalahjumlahkata di class 𝐶, 𝑉adalahjumlahvocabulary.
+
+Tokenisasi1sepakbola2indah3menyerang4presiden5menaikan6harga7bbm8partai9politik10indonesia11berburu12suara13Manchester14United15Juara16liga17inggris18timnasIndonesia  19gagal20AFC𝑃𝐶𝑑=𝑃(𝐶)∏!"#$𝑃(𝑤!|𝐶)𝑃(𝑤!|𝐶)=%&'$().,+,#%&'$(+,-𝑉= 20 (total vocabulary)𝑐𝑜𝑢𝑛𝑡𝐶= 12 (untuk kelas Olahraga)𝑐𝑜𝑢𝑛𝑡𝐶= 9 (untuk kelas Politik)P (Politik) = 2/5 = 0,4P (Olahraga) = 3/5 = 0,6
+
+Data testing◉PSIS berburujuaraLigaIndonesia𝑃(𝑤!|𝐶)=%&'$()!,+,#%&'$(+,-KELAS OLAHRAGAP(PSIS | Kelas Olahraga) = (0+1)/(12+20) = 0,03125 P(berburu | Kelas Olahraga) = (0+1)/(12+20) = 0,03125 P(juara | Kelas Olahraga) =(2+1)/(12+20) = 0,09375 P(liga | Kelas Olahraga) =(1+1)/(12+20) = 0,0625 P(Indonesia | Kelas Olahraga) =(1+1)/(12+20) = 0,0625 
+
+Data testingKELAS POLITIKP(PSIS | Kelas Politik) = (0+1)/(9+20) = 0,03448 P(berburu | Kelas Politik) = (1+1)/(9+20) = 0,06897 P(juara | Kelas Politik) =(0+1)/(9+20) = 0,03448 P(liga | Kelas Politik) =(0+1)/(9+20) = 0,03448 P(Indonesia | Kelas Politik) =(1+1)/(9+20) = 0,06897 
+
+Data testing◉𝑃𝐶𝑑=𝑃(𝐶)∏!"#$𝑃(𝑤!|𝐶)◉Kelas Olahraga◉𝑃𝐶𝑑=0,6 * 0,03125 * 0,03125 * 0,09375 * 0,0625 * 0,0625 = 2,14577 * 10-7◉Kelas Politik◉𝑃𝐶𝑑=0,4 * 0,03448 * 0,06897 * 0,03448 * 0,03448 * 0,06897 = 7,79978 * 10-8Hasil: Dokumen Testing termasuk kedalam Kelas Olahraga
+
+Kesimpulan & Review•Bayesian Classification adalahpengklasifikasianstatistikyang dapatdigunakanuntukmemprediksiprobabilitaskeanggotaansuatuclass.•Bayesian Classification terbuktimemilikiakurasidankecepatanyang tinggisaatdiaplikasikanpadadata yang besar.•MetodeNBC menempuhduatahapdalamproses klasifikasiteksyaitu:1. Tahappelatihan: -Proses analisisterhadapsampeldokumenberupapemilihanvocabulary.-Penentuanprobabilitasprior bagitiapkategoriberdasarkansampeldokumen. 2. Tahapklasifikasi:Menentukannilaikategoridarisuatudokumenberdasarkanterm yang munculdalamdokumenyang di klasifikasi
+
+Kuis(LatihanSoal)◉Denganmenggunakanalgoritmanaïve bayes, tentukanclass dariD7 berikut: ◉Preprocessing: tokenization, stemmingTeksClassTrainingD1TimnasIndonesiagagaljuaraAFCOlahragaD2PSISberburujuaraLigaIndonesiaOlahragaD3PartaipolitikIndonesiaberburusuaraPoitikD4HasilputusanSidangElitDewanPolitikD5HargacabainaikdipasartradisionalEkonomiD6UpahminimumregionaldiprediksinaikEkonomiTestingD7Demoburuhmenaikanupahminimum?
+
+Any questions?Thanks!
+

@@ -1,0 +1,41 @@
+SistemTemuKembaliInformasi“ModelSistemTemuKembali InformasidenganBoolean Model”Tim DosenSTKI
+BukuPenunjang& Literatur
+
+Boolean Retrieval Model◉Modelprosespencarianinformasidariquery,yangmenggunakanekspresiboolean.◉EkspresibooleandapatberupaoperatorlogikaAND,ORdanNOT.◉Hasilperhitungannyahanyaberupanilaibinary(1atau0).◉InimenyebabkandidalamBooleanRetrievalModel(BRM),yangadahanyadokumenrelevanatautidaksamasekali.Tidakadapertimbangandokumenyang‘mirip’.
+
+Boolean Retrieval Model◉Dalampengerjaanoperatorboolean(AND,NOT,OR)adaurutanpengerjaannya(Operatorprecedence).◉Urutannyaadalah:•()àPrioritasyangberadadalamtandakurung•NOT•AND•OR◉Jadikalauadaquerysebagaiberikut?•(MaddingORcrow)ANDKilledORslain•(BrutusORCaesar)ANDNOT(AntonyORCleopatra)
+
+PermasalahanSTKI (IR)◉Misalkankitainginmencaridaricerita-ceritakaranganshakespeareyangmengandungkataBrutusANDCaesarANDNOTCalpurnia.◉Salahsatucaraadalah:Bacasemuateksyangadadariawalsampaiakhir.◉Komputerjugabisadisuruhmelakukanhalini(menggantikanmanusia).Prosesinidisebutgrepping.◉Melihatkemajuankomputerjamansekarang,greppingbisajadisolusiyangbaik.
+
+PermasalahanSTKI (IR)◉Tapi,kalausudahbicarasoalribuandokumen,kitaperlumelakukansesuatuyanglebihbaik.◉Karenaadabeberapatuntutanyangharusdipenuhi:•Kecepatandalampemrosesandokumenyangjumlahnyasangatbanyak.•Fleksibilitas.•Perangkingan.◉Salahsatucarapemecahannyaadalahdenganmembangunindexdaridokumen.
+
+Incidence Matrix◉Incidencematrixadalahsuatumatrixyangterdiridarikolom(dokumen)danbaris(token/terms/kata).◉PembangunanindexakanberbedauntuktiapmetodeRetrieval.◉Untukbooleanmodel,salahsatunyakitaakanmenggunakanIncidencematrixsebagaiindexdarikorpus(kumpulandokumen)datakita.◉Dokumenyangadadikolomadalahsemuadokumenyangterdapatpadakorpusdatakita.
+
+Incidence Matrix◉Token/Terms/Katapadabarisadalahsemuatokenunik(katayangberbedasatudenganyanglainnya)dalamseluruhdokumenyangada.◉Saatsuatutoken(t)adadalamdokumen(d),makanilaidaribarisdankolom(t,d)adalah1.Jikatidakditemukan,makanilaikolom(t,d)adalah0.◉Dari sudutpandangkolom, kitabisatahutoken apasajayang adadi satudokumen(d).◉Dari sudutpandangbarisnya, kitabisatahudi dokumenmanasajatoken (t) ada(posting lists).
+
+Case Study A (1 of 3)◉Perhatikantabelberikut. (VektorbarismenyatakankeberadaansuatuToken/Terms/Kataunikyang adadalamsemuadokumen. Vektorkolommenyatakansemuanamadokumenyang digunakan). Diketahui6 dokumendenganmasing-masingkata yang terdapatdi dalamnya. Jikakata tersebutberadadalamdokumen, makaTerm FrekuensiBiner/ TFbiner= 1, jikatidakTFbiner= 0.Antony & CleopatraJulius CaesarThe TempestHamletOthelloMacbethAntony110001Brutus110100Caesar110111Calpurnia010000Cleopatra100000Mercy101111Worser101110….
+
+Case Study A (2 of 3)◉DenganmengunakanIncidencematrixyangsudahdibangun,kitasudahbisamemecahkanmasalahyangpertamadihadapitadi.◉KemudianmisalkanmencarihasilBooleanQueryRetrieval:BrutusANDCaesarANDNOTCalpurnia◉Makadapatdiketahuidenganmudah,dokumenmanasajayangmengandungkataBrutusdanCaesar,tetapitidakmengandungkataCalpurnia.
+
+Case Study A (3 of 3)◉TFbiner(Brutus) =110100◉TFbiner(Caesar) = 110111◉TFbiner(Calpurnia) = 010000◉Brutus AND Caesar AND NOT Calpurnia= 110100 AND 110111 AND NOT 010000= 110100 AND 110111 AND 101111= 100100◉Berarti,jawabanhasilBooleanQueryRetrieval:BrutusANDCaesarANDNOTCalpurniaadalahDokumen“Antony&Cleopatra”dan“Hamlet”
+100100
+
+Inverted Index◉Invertedindexadalahsebuahstrukturdataindexyangdibangununtukmemudahkanquerypencarianyangmemotongtiapkata(term)yangberbedadarisuatudaftartermdokumen.◉Tujuan:•Meningkatkankecepatandanefisiensidalammelakukanpencarianpadasekumpulandokumen.•Menemukandokumen-dokumenyangmengandungqueryuser.
+
+Inverted Index◉Ilustrasi:BrutusCaesarCalpurnia(Dictionary)(Postings)124113145173174124561657132…23154101Kumpulan semuakata unikdarisemuadokumenPosisiToken/Terms/Kata padadokumen
+
+Inverted Index◉Invertedindexmempunyaivocabulary,yangberisiseluruhtermyangberbedapadamasing-masingdokumennya(unik),dantiap-tiaptermyangberbedaditempatkanpadainvertedlist.◉Notasi:<idj, fij,[O1,O2,…,Ok| fij|]>Keterangan:•idjadalahID dokumendjyang mengandungterm ti•fijadalahfrekuensikemunculanterm tididokumendj•Okadalahposisiterm tidi dokumendj.
+
+Case Study B (1 of 4)◉Perhatikanbeberapadokumenberikut: (BuatlahInverted Index-nya)•Dokument1 (Id1): •Dokument2 (Id2)  : •Dokument3 (Id3) :  AlgoritmaGenetikdapatdigunakanuntuk12345Optimasifuzzy67Optimasifungsikeanggotaanpadafuzzy12345AlgoritmagenetikmerupakanalgoritmaLearning12345
+
+Case Study B (2 of 4)◉Set vocabulary :{algoritma, genetik, dapat, digunakan, untuk, optimasi, fuzzy, fungsi, keanggotaan, pada, merupakan, learning}◉Inverted Index sederhana:Term InvertedListAlgoritmaId1, id3DapatId1DigunakanId1FungsiId2FuzzyId1, id2GenetikId1, id3KeanggotaanId2LearningId3MerupakanId3OptimasiId1, id2PadaId2Untukid1
+
+Case Study B (3 of 4)◉BentukkomplekdariInverted Index :
+◉KemudianmisalkanmencarihasilBooleanQueryRetrieval:FuzzyORNOT(GenetikANDLearning)Term InvertedListAlgoritma<Id1,1,[1]>, <id3,2,[1,4]>Dapat<Id1,1,[3]>Digunakan<Id1,1,[4]>Fungsi<Id2,1,[2]>Fuzzy<Id1,1,[7]>, <id2,1,[5]>Genetik<Id1,1,[2]>, <id3,1,[2]>Keanggotaan<Id2,1,[3]>Learning<Id3,1,[5]>Merupakan<Id3,1,[3]>Optimasi<Id1,1,[6]>, <id2,1,[1]>Pada<Id2,1,[4]>Untuk<Id1,1,[5]>
+
+Case Study B (4 of 4)◉KemudianmisalkanmencarihasilBooleanQueryRetrieval:FuzzyORNOT(GenetikANDLearning)•TFbiner(Fuzzy) =110•TFbiner(Genetik) = 101•TFbiner(Learning) = 001◉Fuzzy OR NOT (GenetikAND Learning) = 110 OR NOT (101 AND 001)= 110 OR NOT (001)= 110 OR 110= 110◉JadihasilBooleanQueryRetrieval:FuzzyORNOT(GenetikANDLearning)adalahDokumen“1dan2”.
+
+Kuis(Latihan Soal)◉BuatlahIncidencematrixuntukdokumen-dokumenberikut:◉TentukanhasilbooleanqueryretrievalberikutberdasarkanIncidencematrixdiatas:•Home AND Sales AND NOT July•Home AND July AND NOT SalesDokumen(Doc)Isi (Content)Doc 1New home sales top forecastsDoc2Homesales rise in julyDoc 3Increasein home sales in julyDoc4Julynew home sales rise
+
+Any questions?Thanks!
+

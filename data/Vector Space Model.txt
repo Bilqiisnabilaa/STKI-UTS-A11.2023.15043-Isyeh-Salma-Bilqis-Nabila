@@ -1,0 +1,77 @@
+SistemTemuKembaliInformasi“Model SistemTemuKembali InformasidenganVector Space Model (VSM)”TIM DosenSTKI
+BukuPenunjang& Literatur
+Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+Boolean Model◉Setiap ‘term’ hanya disimbolkan dengan •1 : Muncul dalam dokumen•0 : Tidak muncul dalam dokumen◉Belum merepresentasikan informasi tentang frekuensi kemunculan kata, lokasi kata, atau urutan kemunculan kata.
+Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+Vector Space Model◉Memodelkan ‘term’ kedalam ruang vektor.◉Setiap titik memiliki jarak dan arah di dalam ruang vektor
+Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+◉Setiap kata (term) merupakan satu dimensi dalam ruang vektor.◉Setiap titik merupakan satu dokumen.◉Nilai vektor merepresentasikan jumlah kemunculan kata tertentu dalam dokumen tersebut
+Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+Similarity◉Kemiripan dua vektor bisa dihitung dari seberapa dekat dua titik tersebut dalam ruang vektor.◉Salah satunya dengan menghitung jarak dengan euclidean distance.
+Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+◉Memiliki kelemahan karena hanya menghitung kemiripan dari jumlah kemunculan kata.
+Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+Angular Similarity◉Contoh penghitungan kemiripan lain adalah berdasarkan sudut diantara 2 vektor.
+Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+◉Contoh perhitungn kemiripan dengan menghitung nilai cos dari sudut diantara dua vektor.
+Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+Similarity
+Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+Document Ranking◉Misalkan q sebagai vector dari query dan (D1, D2,..., Dn) sebagai dokumen yang akan dibandingkan.◉Hitung nilai kemiripan kosinus q dengan setiap dokumen (D1, D2, ..., Dn)◉Urutkan dokumen berdasarkan nilai kemiripan yang dihasilkan.Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+PengertianVector Space Model (VSM) -(1)◉VectorSpaceModel(VSM)adalahmodelInformationRetrievalyangberbasistokenuntukmemungkinkanpartialmatchingdanpemeringkatandokumen(pengindexan).◉Ataumodelyangdigunakanuntukmengukurkemiripanantarasuatudokumendengansuatuquery.◉Denganprinsipdasarmengubahsuatudokumenmenjadikumpulantoken-token.◉Querymenjadivectortokenyangberfungsiuntukmencaritokenyangberhubungandenganmelihatkesamaanvectordokumendanqueryberdasarkanjarakvector.Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+PengertianVector Space Model (VSM) -(2)◉Querydandokumendianggapsebagaivector-vectorpadaruangn-dimensi𝑑!=(𝑡!,#,𝑡!,$,…,𝑡!,%),dimanatadalahjumlahdariseluruhtermyangadadalamleksikon.◉Leksikonadalahdaftarsemuatermyangadadalamindeks.◉UntuksetiaptermtidakhanyadilihatadaatautidakadadalamdokumennamundiberibobotmenggunakanschemeTFatauTF-IDF.◉TF-IDFmerupakanskemapembobotanyangseringdigunakandalamVectorSpaceModel(VSM)bersamadengancosinesimilarityuntukmenentukankesamaanantaraduabuahdokumen.Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+PembobotanKata (TF-IDF) –(1)◉TF–IDFmempertimbangakanfrekuensikata-katayangberbedadalamsemuadokumendanmampumembedakandokumen.DalamVectorSpaceModel(VSM),setiapvectordisusunolehtermdanbobotyangmewakilidokumen.◉Kesamaandokumendapatdinyatakandengansudutataujarakantaravector,semakinkecilsudutataujarakberartisemakinmiripduadokumentersebut.
+Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+PembobotanKata (TF-IDF) –(2)◉TF(TermFrequency)merupakanfrekuensikemunculanterm(t)padadokumen(d).◉DF(DocumentFrequency)merupakanbanyaknyadokumendimanasuatuterm(t)muncul.Atausebuahdokumenyangmengandungterm(t).◉IDF(InverseDocumentFrequency)Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+PembobotanKata (TF-IDF) –(3)◉RumusdariTF-IDFadalahsebagaiberikut:
+Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+Perankingan◉Perangkingandilakukanuntukmengukurkemiripanantaravectorquerydanvectordocumentyangakandibandingkan.◉Salahsatumetodeyangbiasadigunakandalamperhitungankemiripanadalahpengukurancosine,yangmenentukansudutantaravectordocumentdanvectorqueryyangdidefinisikansebagai:◉Dimana,𝑤!,#adalahbobotdariterm(t),penyebutdalampersamaaninidisebutfaktornormalisasiyangberfungsiuntukmenghilangkanpengaruhpanjangdokumen.◉Panjangdokumencenderungmemilikinilaiyanglebihbesarkarenamemilikifrekuensikemunculankatayangbesarpula.
+Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+Cosine Similarity –(1)◉Fungsisimilarityadalahfungsiyangmenerimaduabuahobjekdanmengembalikannilaikemiripan(similarity)antarakeduaobjektersebutberupabilanganriil.◉Umumnya,nilaiyangdihasilkanolehfungsisimilarityberkisarpadainterval[0…1].Namun,adajugayangmenghasilkannilaiyangberadadiluarintervaltersebut.Makauntukmemetakannyadapatdilakukannormalisasi.◉Cosinesimilarityadalahperhitungankesamaanantaraduavectorndimensidenganmencarikosinusdarisudutdiantarakeduanyadanseringdigunakanuntukmembandingkandokumendalamtextmining.Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+Cosine Similarity –(2)◉BerikutrumusCosine Similarity :
+Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+Cosine Similarity –(3)◉Semakinbesarhasilfungsisimilarity,makakeduaobjekyangdievaluasidianggapsemakinmirip.Sebaliknya,jikasemakinkecilhasilfungsisimilarity,makakeduaobjektersebutdianggapsemakinberbeda.◉Padafungsiyangmenghasilkannilaipadajangkauan[0…1],nilai1melambangkankeduaobjekpersissama,sedangkannilai0melambangkankeduaobjeksamasekaliberbeda.
+Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+ContohPerhitungan-(1)
+Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+ContohPerhitungan–(2)
+Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+ContohPerhitungan–(3)
+Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+ContohPerhitungan–(4)
+Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+ContohPerhitungan–(5)
+Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+Kelebihan& KekuranganVector Space Model (VSM)Kelebihan◉Adanyaperingkatpengambilaninformasi◉Menampilkanreferensiyang sesuaikebutuhan◉PenyocokansecarapartialKekurangan◉Menganggapinformasiadalahindependen◉Bobotpermasalahan(istilah) tidaklagidiperlukan
+Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+Kuis(Latihan Soal)◉HitungnilaikemiripanantaraQuerydenganDokumenkemudiantentukanhasilnya,jikamenggunakanRumusCosinusSimilarity:•Dokumen1=Daunbewarnacoklat•Dokumen2=Bungabewarnahijau•Dokumen3=Rumputbewarnahijau•Query=DaunhijauRumus Cosinus Similarity : 
+Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
+Any questions?Thanks!
+Teknik Informatika–S1Mata KuliahFakultasIlmuKomputer, UniversitasDian NuswantoroSistemTemuKembali Informasi
+
